@@ -10,13 +10,11 @@ function Formulaire() {
           inputName="firstname"
           inputLabel="Votre prénom"
           inputPlaceholder="John"
-          inputType="text"
         />
         <InputText
           inputName="lastname"
           inputLabel="Votre nom"
           inputPlaceholder="Smith"
-          inputType="text"
         />
         <InputText
           inputName="email"

@@ -1,5 +1,4 @@
-import "./App.css";
-import Formulaire from "./layouts/Formulaire/Formulaire";
+import Formulaire from "../../layouts/Formulaire/Formulaire";
 function App() {
   return (
     <div className="App">
