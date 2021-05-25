@@ -1,8 +1,8 @@
-import Formulaire from "../../layouts/Formulaire/FormulaireContainer";
+import Routes from "../../routes";
 function App() {
   return (
     <div className="App">
-      <Formulaire />
+      <Routes />
     </div>
   );
 }
