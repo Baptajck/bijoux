@@ -1,0 +1,63 @@
+.input {
+  &Container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &Label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: auto;
+    color: #adadad;
+    width: 100%;
+    letter-spacing: 1.25px;
+  }
+
+  &Item {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #adadad;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 1.5em 3em 0.5em 0;
+    color: #000080;
+    background-color: #fff;
+    letter-spacing: 1.25px;
+
+    &:focus {
+      outline-style: none;
+      border-bottom: 1px solid #000080;
+      color: #000080;
+      + label {
+        color: #000080;
+      }
+      ~ svg {
+        fill: #000080;
+      }
+    }
+
+    &::placeholder {
+      font-size: medium-text();
+      color: #adadad;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      border-color: #db0000;
+      color: #adadad;
+      + label {
+        color: #db0000;
+      }
+    }
+  }
+
+  &Svg {
+    position: absolute;
+    right: 3%;
+    bottom: 25%;
+    width: 18px;
+    height: 18px;
+    fill: #adadad;
+  }
+}
