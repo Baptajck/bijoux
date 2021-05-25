@@ -1,5 +1,6 @@
 /** Actions types **/
 export const SET_INPUT = "SET_INPUT";
+export const SAVE_USER = "SAVE_USER";
 export const CREATE_USER = "CREATE_USER";
 
 /** Actions creators **/
@@ -9,21 +10,11 @@ export const setInput = (name, value) => ({
   value,
 });
 
-export const createUser = (
-  firstName,
-  lastName,
-  email,
-  password,
-  address,
-  city,
-  phone
-) => ({
+export const saveUser = () => ({
+  type: SAVE_USER,
+});
+
+export const createUser = (password) => ({
   type: CREATE_USER,
-  firstName,
-  lastName,
-  email,
   password,
-  address,
-  city,
-  phone,
 });

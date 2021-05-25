@@ -9,8 +9,8 @@ function Formulaire({
   email,
   address,
   city,
-  role,
   phone,
+  role,
   setInput,
   createUser,
 }) {
@@ -18,7 +18,7 @@ function Formulaire({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser();
+    createUser(password);
   };
 
   return (
@@ -76,7 +76,7 @@ function Formulaire({
           inputName="phone"
           inputLabel="Votre téléphone"
           inputPlaceholder="06 05 04 03 02"
-          inputType="tel"
+          inputType="text"
           changeInput={(v) => setInput("phone", v)}
           text={phone}
         />

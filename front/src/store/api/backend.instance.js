@@ -5,9 +5,6 @@ const instance = axios.create({
   timeout: 1000,
 });
 
-export const login = (email, password) =>
-  instance.post(`/users/login`, { email, password });
-
 export const createUserToBdd = (
   firstName,
   lastName,
@@ -27,13 +24,4 @@ export const createUserToBdd = (
     phone,
   });
 
-export const getUser = (userId, accessToken) =>
-  instance.get(
-    `/users/${userId}?filter[include]=roles&access_token=${accessToken}`
-  );
-export const changePassword = (oldPassword, newPassword, accessToken) =>
-  instance.post(`users/changePassword?access_token=${accessToken}`, {
-    oldPassword,
-    newPassword,
-  });
 export default instance;

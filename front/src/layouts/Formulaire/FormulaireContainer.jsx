@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setInput, createUser } from "../../store/user/userActions";
+import { setInput, saveUser, createUser } from "../../store/user/userActions";
 
 import Formulaire from "./Formulaire";
 
@@ -15,10 +15,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setInput: (name, value) => dispatch(setInput(name, value)),
-  createUser: (firstName, lastName, email, address, role, city, phone) =>
-    dispatch(
-      createUser(firstName, lastName, email, address, role, city, phone)
-    ),
+  createUser: (password) => dispatch(createUser(password)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Formulaire);

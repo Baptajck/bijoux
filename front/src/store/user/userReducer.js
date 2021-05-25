@@ -1,4 +1,4 @@
-import { SET_INPUT } from "./userActions";
+import { SET_INPUT, SAVE_USER } from "./userActions";
 
 const initialState = {
   firstName: "",
@@ -6,8 +6,8 @@ const initialState = {
   email: "",
   address: "",
   city: "",
-  role: "user",
   phone: "",
+  role: "user",
   isLogged: false,
 };
 
@@ -17,6 +17,11 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
+      };
+    case SAVE_USER:
+      return {
+        ...state,
+        isLogged: true,
       };
     default:
       return state;

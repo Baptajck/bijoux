@@ -23,14 +23,14 @@ module.exports = (app, db) => {
     if (result.status === 501) {
       res.json(result);
     }
-    mail(
-      req.body.email,
-      "Validation de votre compte",
-      "Bienvenu sur Bijou",
-      'Pour valider votre mail, cliquez <a href="http://localhost:8000/api/v1/user/validate/' +
-        result.key_id +
-        '">ici<a/> !'
-    );
+    // mail(
+    //   req.body.email,
+    //   "Validation de votre compte",
+    //   "Bienvenu sur Bijou",
+    //   'Pour valider votre mail, cliquez <a href="http://localhost:8000/api/v1/user/validate/' +
+    //     result.key_id +
+    //     '">ici<a/> !'
+    // );
     res.json({
       status: 200,
       msg: "Un email de confirmation vous a été envoyé",
