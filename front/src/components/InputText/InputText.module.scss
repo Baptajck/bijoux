@@ -1,7 +1,7 @@
 .input {
   &Container {
     position: relative;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 
   &Label {
@@ -55,7 +55,7 @@
 
   &Svg {
     position: absolute;
-    right: 3%;
+    right: -20px;
     bottom: 25%;
     width: 18px;
     height: 18px;

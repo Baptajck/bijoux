@@ -37,7 +37,7 @@ const user = process.env.USER_DB;
 mysql
   .createConnection({
     host: host,
-    database: database,
+    database: "3wa",
     user: "root",
   })
   .then((db) => {

@@ -1,4 +1,4 @@
-import Formulaire from "../../layouts/Formulaire/Formulaire";
+import Formulaire from "../../layouts/Formulaire/FormulaireContainer";
 function App() {
   return (
     <div className="App">
