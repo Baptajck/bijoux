@@ -87,24 +87,23 @@ module.exports = (app, db) => {
     }
     res.render("forgot", { key_id: key_id, error: error });
   });
+
   app.post("/api/v1/user/login", async (req, res, next) => {
     let user = await userModel.getOneUserByMail(req.body.email);
     if (user.length === 0) {
       res.json({ status: 404, msg: "email inexistant dans la base de donnée" });
     } else {
-      if (user[0].validate === "no") {
-        res.json({ status: 403, msg: "Votre compte n'est pas validé" });
-      }
-      let same = await bcrypt.compare(req.body.password, user[0].password);
+      let same = await bcrypt.compare(req.body.password, user.password);
       if (same) {
-        let infos = { id: user[0].id, email: user[0].email };
-        let token = jwt.sign(infos, secret);
+        let infos = { id: user.id, email: user.email };
+        let token = jwt.sign(infos, "tototo");
         res.json({ status: 200, msg: "connecté", token: token, user: user[0] });
       } else {
         res.json({ status: 401, msg: "Utilisateur ou mot de passe incorrect" });
       }
     }
   });
+
   app.post("/api/v1/user/update", withAuth, async (req, res, next) => {
     let result = await userModel.updateUser(req);
     let user = await userModel.getOneUserByMail(req.body.email);

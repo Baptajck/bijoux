@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { setInput, saveUser, createUser } from "../../store/user/userActions";
 
-import Formulaire from "./Formulaire";
+import CreateUser from "./CreateUser";
 
 const mapStateToProps = (state) => ({
   firstName: state.userReducer.firstName,
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   createUser: (password) => dispatch(createUser(password)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Formulaire);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);

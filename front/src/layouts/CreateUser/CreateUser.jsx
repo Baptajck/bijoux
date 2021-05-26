@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-import s from "./Formulaire.module.scss";
+import s from "./CreateUser.module.scss";
 import InputText from "../../components/InputText/InputText";
 
-function Formulaire({
+function CreateUser({
   firstName,
   lastName,
   email,
@@ -84,10 +85,13 @@ function Formulaire({
           <button className={s.button} type="submit">
             Envoyer
           </button>
+          <NavLink to="/se-connecter" className={s.linkTo}>
+            J'ai déjà un compte
+          </NavLink>
         </div>
       </form>
     </div>
   );
 }
 
-export default Formulaire;
+export default CreateUser;

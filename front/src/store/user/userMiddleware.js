@@ -1,6 +1,11 @@
 import { push } from "connected-react-router";
-import { createUserToBdd } from "../api/backend.instance";
-import { CREATE_USER, saveUser } from "./userActions";
+import { createUserToBdd, loginUser } from "../api/backend.instance";
+import {
+  CREATE_USER,
+  saveUser,
+  LOGIN_USER,
+  saveUserLogin,
+} from "./userActions";
 
 const userMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
@@ -10,12 +15,12 @@ const userMiddleware = (store) => (next) => (action) => {
         const { password } = action;
         const { firstName, lastName, email, address, city, phone } =
           state.userReducer;
-
+        console.log(action);
         createUserToBdd(
           firstName,
           lastName,
-          password,
           email,
+          password,
           address,
           city,
           phone
@@ -28,6 +33,21 @@ const userMiddleware = (store) => (next) => (action) => {
       }
       break;
 
+    case LOGIN_USER:
+      {
+        const { password } = action;
+        const { email } = state.userReducer;
+
+        loginUser(email, password)
+          .then(({ data: { token } }) => {
+            store.dispatch(saveUserLogin(token));
+            store.dispatch(push("/accueil"));
+          })
+          .catch((err) => console.error(err));
+
+        next(action);
+      }
+      break;
     default:
       next(action);
   }

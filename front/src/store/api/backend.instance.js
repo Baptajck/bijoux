@@ -24,4 +24,7 @@ export const createUserToBdd = (
     phone,
   });
 
+export const loginUser = (email, password) =>
+  instance.post("/v1/user/login", { email, password });
+
 export default instance;

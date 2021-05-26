@@ -7,7 +7,7 @@ const ProtectedRoute = ({ component: Component, user, isLogged, ...rest }) => {
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
       render={(props) =>
-        isLogged ? <Component {...props} /> : <Redirect to="/connexion" />
+        isLogged ? <Component {...props} /> : <Redirect to="/se-connecter" />
       }
     />
   );
