@@ -27,4 +27,6 @@ export const createUserToBdd = (
 export const loginUser = (email, password) =>
   instance.post("/v1/user/login", { email, password });
 
+export const fetchProductToBdd = () => instance.get("/v1/product/all");
+
 export default instance;

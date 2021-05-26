@@ -1,0 +1,37 @@
+.container {
+  width: 40%;
+  margin: 2em auto;
+}
+
+.title {
+  text-align: center;
+  margin: 2em 0;
+  font-size: 24px;
+  color: darken(coral, 25%);
+}
+
+.card {
+  background-color: lighten(coral, 25%);
+  padding: 1em;
+  border-radius: 10px;
+  color: #000;
+  margin: 2em auto;
+  letter-spacing: 1px;
+
+  &Title {
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  &description {
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  &Price {
+    text-align: right;
+    font-size: 14px;
+    font-style: italic;
+  }
+}

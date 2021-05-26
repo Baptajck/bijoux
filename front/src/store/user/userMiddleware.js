@@ -15,7 +15,6 @@ const userMiddleware = (store) => (next) => (action) => {
         const { password } = action;
         const { firstName, lastName, email, address, city, phone } =
           state.userReducer;
-        console.log(action);
         createUserToBdd(
           firstName,
           lastName,
@@ -39,8 +38,8 @@ const userMiddleware = (store) => (next) => (action) => {
         const { email } = state.userReducer;
 
         loginUser(email, password)
-          .then(({ data: { token } }) => {
-            store.dispatch(saveUserLogin(token));
+          .then(({ data: { token, user } }) => {
+            store.dispatch(saveUserLogin(token, user));
             store.dispatch(push("/accueil"));
           })
           .catch((err) => console.error(err));

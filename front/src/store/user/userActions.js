@@ -26,7 +26,8 @@ export const login = (password) => ({
   password,
 });
 
-export const saveUserLogin = (token) => ({
+export const saveUserLogin = (token, user) => ({
   type: SAVE_USER_LOGIN,
   token,
+  user,
 });

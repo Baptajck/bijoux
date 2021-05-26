@@ -3,7 +3,7 @@ import ProctectedRoute from "./common/ProctectedRoute/ProtectedRouteContainer";
 
 import CreateUser from "./layouts/CreateUser/CreateUserContainer";
 import Login from "./layouts/Login/LoginContainer";
-import Home from "./layouts/Home/Home";
+import Home from "./layouts/Home/HomeContainer";
 
 const Routes = () => (
   <Switch>

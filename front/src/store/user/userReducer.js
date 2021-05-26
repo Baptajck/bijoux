@@ -9,6 +9,7 @@ const initialState = {
   phone: "",
   role: "user",
   token: "",
+  user: [],
   isLogged: false,
 };
 
@@ -28,6 +29,7 @@ const userReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         token: action.token,
+        user: action.user,
         isLogged: true,
       };
     default:

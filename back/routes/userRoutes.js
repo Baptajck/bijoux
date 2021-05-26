@@ -97,7 +97,7 @@ module.exports = (app, db) => {
       if (same) {
         let infos = { id: user.id, email: user.email };
         let token = jwt.sign(infos, "tototo");
-        res.json({ status: 200, msg: "connecté", token: token, user: user[0] });
+        res.json({ status: 200, msg: "connecté", token: token, user: user });
       } else {
         res.json({ status: 401, msg: "Utilisateur ou mot de passe incorrect" });
       }
